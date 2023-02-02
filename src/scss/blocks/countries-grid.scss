@@ -1,0 +1,9 @@
+.countries{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    &__item{
+       padding: 3rem;
+        background-color: var(--dark-mode-elements);
+
+    }
+}

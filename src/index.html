@@ -6,12 +6,52 @@
     <!-- PON UN FAVICON!!! -->
     <link rel="icon" type="image/svg+xml" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
     <!-- CAMBIA EL TITLE!!! -->
-    <title>Vite Template</title>
+    <title>Rest Countries</title>
   </head>
   <body>
-    <header class="header"></header>
-    <main class="main"></main>
+    <header class="header">
+      <h1 class="title">Where in the world?</h1>
+      <div class="dark-mode">
+        <img src="assets/images/sun-svgrepo-com.svg" alt="Iocno de un sol" class="icon icon--dark-mode">
+        <p class="text text--dark-mode">Light Mode</p>
+      </div>
+    </header>
+    <main class="main">
+
+      <div class="search">
+        <form id="form" class="form">
+          <img src="assets/images/magnifying-glass-solid.svg" alt="Icono de lupa" class="icon icon--search">
+
+          <input type="text" name="country" class="form__field form__field--input" placeholder="Search for a country...">
+
+          <select class="form__field form__field--region" name="region" id="region">
+            <option value="filter-region">Filter by Region</option>
+            <option value="africa">Africa</option>
+            <option value="usa">America</option>
+            <option value="asia">Asia</option>
+            <option value="europe">Europe</option>
+            <option value="oceanic">Oceania</option>
+          </select>
+        </form>
+      </div>
+
+      <div id="countries" class="countries">
+        
+        <div class="countries__item" data-country="germany">
+          <img src="" alt="" class="countries__image">
+          <div class="countries__info">
+            <h2 class="title title--country">Germany</h2>
+            <p class="text text--country">Population: 81.770.900</p>
+            <p class="text text--country">Region: Europe</p>
+            <p class="text text--country">Capital: Berlin</p>
+          </div>
+        </div>
+      </div>
+    </main>
     <footer class="footer"></footer>
     <script type="module" src="./js/index.js"></script>
   </body>

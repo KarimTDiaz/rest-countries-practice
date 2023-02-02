@@ -1,1 +1,15 @@
+@use '../mixins/flexbox.scss' as*;
+.header{
+    @include flexbox(flex,row,nowrap,space-between,center);
+    padding: 0 5rem;
+    margin-bottom: 4rem;
+    background-color: var(--dark-mode-elements);
 
+
+}
+
+.dark-mode{
+    @include flexbox(flex,row,nowrap,space-between,center);
+    gap: 1rem;
+    font-weight: var(--weight-l);
+}

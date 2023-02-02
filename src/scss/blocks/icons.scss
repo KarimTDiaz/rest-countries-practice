@@ -1,0 +1,11 @@
+
+.icon{
+    width: 30px;
+    &--dark-mode{
+        filter: invert(1);
+    }
+    &--search{
+        position: absolute;
+        padding-left: 1rem;
+    }
+}
