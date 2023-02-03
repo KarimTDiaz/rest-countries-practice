@@ -42,6 +42,7 @@ const createCountryCard = countries => {
 
   countriesContainerElement.append(fragment);
 };
+
 const allRegionsData = async region => {
   const data = await fetchData(
     'https://restcountries.com/v3.1/region/' + region

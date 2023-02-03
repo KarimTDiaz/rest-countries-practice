@@ -1,9 +1,21 @@
+@use '../mixins/flexbox.scss' as*;
 
 .modal{
+    @include flexbox(flex, row, nowrap , center,center);
+    gap: 5rem;
     position: fixed;
     top: 300px;
     width: 100%;
     height: 100vh;
     background-color: var(--body-bg);
-    display: none;
+    &__list{
+        @include flexbox(flex, row, nowrap , baseline,baseline);
+        gap: 5rem;
+    }
+    &__item{
+
+    }
+    &__image{
+        width: 200px;
+    }
 }

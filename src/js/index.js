@@ -12,7 +12,6 @@ const themeElement = document.getElementById('switch-theme');
 formElement.addEventListener('submit', ev => {
   ev.preventDefault();
   singleCountryData(ev.target.country.value);
-  console.log(ev.target.country.value);
 });
 
 regionElement.addEventListener('change', ev => {
@@ -26,5 +25,4 @@ themeElement.addEventListener('click', ev => {
 countryElement.addEventListener('click', ev => {
   showModal();
   allData(ev.target.dataset.country);
-  console.log(ev.target.dataset.country);
 });
