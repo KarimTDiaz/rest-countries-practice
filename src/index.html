@@ -15,9 +15,9 @@
   <body>
     <header class="header">
       <h1 class="title">Where in the world?</h1>
-      <div class="dark-mode">
-        <img src="assets/images/sun-svgrepo-com.svg" alt="Iocno de un sol" class="icon icon--dark-mode">
-        <p class="text text--dark-mode">Light Mode</p>
+      <div id="switch-theme" class="dark-mode">
+        <img id="switch-theme-icon" src='assets/images/sun-svgrepo-com.svg' alt="Iocno de un sol" class="icon icon--dark-mode">
+        <p id="switch-theme-text" class="text text--dark-mode">Light Mode</p>
       </div>
     </header>
     <main class="main">
@@ -28,31 +28,49 @@
 
           <input type="text" name="country" class="form__field form__field--input" placeholder="Search for a country...">
 
-          <select class="form__field form__field--region" name="region" id="region">
+          <select class="form__field form__field--select" name="region" id="region">
             <option value="filter-region">Filter by Region</option>
             <option value="africa">Africa</option>
-            <option value="usa">America</option>
+            <option value="america">America</option>
             <option value="asia">Asia</option>
             <option value="europe">Europe</option>
-            <option value="oceanic">Oceania</option>
+            <option value="oceania">Oceania</option>
           </select>
         </form>
       </div>
+      <div id="countries" class="countries"></div>
+    </main>
+    <div id="modal" class="modal">
 
-      <div id="countries" class="countries">
+      <button>Back</button>
+      <img id="image" src="" alt="Imagen de bandera" class="modal__image">
+      <div class="modal__info">
+        <h2 class="title">Spain</h2>
         
-        <div class="countries__item" data-country="germany">
-          <img src="" alt="" class="countries__image">
-          <div class="countries__info">
-            <h2 class="title title--country">Germany</h2>
-            <p class="text text--country">Population: 81.770.900</p>
-            <p class="text text--country">Region: Europe</p>
-            <p class="text text--country">Capital: Berlin</p>
+        <div class="modal__list">
+          <div class="modal__list--left">
+            <p class="text">name <span>spain</span></p>
+            <p class="text">name <span>spain</span></p>
+            <p class="text">name <span>spain</span></p>
+            <p class="text">name <span>spain</span></p>
+            <p class="text">name <span>spain</span></p>
+          </div>
+          <div class="modal__list--left">
+            <p class="text">name <span>spain</span></p>
+            <p class="text">name <span>spain</span></p>
+            <p class="text">name <span>spain</span></p>
           </div>
         </div>
+        <div class="buttons-container">
+          <span>border countries</span>
+          <button>france</button>
+          <button>france</button>
+          <button>france</button>
+        </div>
+
       </div>
-    </main>
-    <footer class="footer"></footer>
+    </div>
+
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>

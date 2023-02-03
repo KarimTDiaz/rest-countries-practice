@@ -1,9 +1,29 @@
 .countries{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
     &__item{
-       padding: 3rem;
-        background-color: var(--dark-mode-elements);
-
+        background-color: var(--country-card-bg);
+        border-radius: 10px;
+        box-shadow:  2px 2px 8px 1px var(--box-shadow);
     }
+    &__info{
+        padding: 1rem;
+    }
+    &__image{
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        min-height: 210px;
+        max-height: 210px;
+        pointer-events: none;
+    }
+}
+.bold{
+    font-weight: var(--weight-l);
+    pointer-events: none;
+}
+.thin{
+    font-weight: var(--weight-s);
+    pointer-events: none;
 }
