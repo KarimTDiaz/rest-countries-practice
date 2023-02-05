@@ -23,6 +23,5 @@ themeElement.addEventListener('click', ev => {
 });
 
 countryElement.addEventListener('click', ev => {
-  showModal();
   allData(ev.target.dataset.country);
 });

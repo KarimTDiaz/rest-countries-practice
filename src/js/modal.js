@@ -1,8 +1,9 @@
 import { createElement, fetchData } from './utils.js';
 const modalWindowElement = document.getElementById('modal');
-/* modalimage = document.getElementById('image'); */
 
-const showModal = () => {};
+const showModal = () => {
+  modalWindowElement.classList.add('modal--show');
+};
 const createModalContent = countries => {
   const fragmentModal = document.createDocumentFragment();
   modalWindowElement.innerHTML = '';
@@ -53,8 +54,19 @@ const createModalContent = countries => {
       modalLanguages.append(modalValueLanguages);
       console.log(language);
     });
-    const modalButtons = createElement('div', 'buttons-container');
-    const modalButtonsValue = createElement('span', 'bold');
+    const modalButtonsContainer = createElement('div', 'buttons-container');
+    const modalButtonsValue = createElement(
+      'span',
+      'bold',
+      'Border Countries: '
+    );
+    modalButtonsContainer.append(modalButtonsValue);
+    let modalButtons;
+    country.borders.forEach((border, index) => {
+      modalButtons = createElement('button', 'button', country.borders[index]);
+      modalButtonsContainer.append(modalButtons);
+      console.log(country.borders[index]);
+    });
 
     modalName.append(modalValueName);
     modalPopulation.append(modalValuePopulation);
@@ -64,7 +76,6 @@ const createModalContent = countries => {
 
     modalDomain.append(modalValueDomain);
     modalCurrencies.append(modalValueCurrencies);
-
     modalListLeft.append(
       modalName,
       modalPopulation,
@@ -75,7 +86,7 @@ const createModalContent = countries => {
     modalListRight.append(modalDomain, modalCurrencies, modalLanguages);
     modalList.append(modalListLeft, modalListRight);
 
-    modalInfo.append(modalTitle, modalList);
+    modalInfo.append(modalTitle, modalList, modalButtonsContainer);
 
     modalWindowElement.append(backButton, modalImage, modalInfo);
   });
@@ -87,5 +98,6 @@ const allData = async country => {
     'https://restcountries.com/v3.1/name/' + country
   );
   createModalContent(data);
+  showModal();
 };
 export { showModal, createModalContent, allData };
