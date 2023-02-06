@@ -4,11 +4,17 @@ const modalWindowElement = document.getElementById('modal');
 const showModal = () => {
   modalWindowElement.classList.add('modal--show');
 };
+
 const createModalContent = countries => {
   const fragmentModal = document.createDocumentFragment();
   modalWindowElement.innerHTML = '';
   countries.forEach(country => {
-    const backButton = createElement('button', 'button', ' BACK');
+    const backButton = createElement('button', 'button--back', ' BACK');
+
+    backButton.addEventListener('click', ev => {
+      modalWindowElement.classList.remove('modal--show');
+    });
+
     const modalImage = createElement('img', 'modal__image', country.flags.svg);
     const modalInfo = createElement('div');
     const modalTitle = createElement('h2', 'bold', country.name.common);
@@ -52,7 +58,6 @@ const createModalContent = countries => {
     Object.values(country.languages).forEach(language => {
       modalValueLanguages = createElement('span', 'thin', language + '. ');
       modalLanguages.append(modalValueLanguages);
-      console.log(language);
     });
     const modalButtonsContainer = createElement('div', 'buttons-container');
     const modalButtonsValue = createElement(
@@ -95,7 +100,7 @@ const createModalContent = countries => {
 
 const allData = async country => {
   const data = await fetchData(
-    'https://restcountries.com/v3.1/name/' + country
+    'https://restcountries.com/v3.1/name/' + country + '?fullText=true'
   );
   createModalContent(data);
   showModal();

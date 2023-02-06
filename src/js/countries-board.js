@@ -52,9 +52,14 @@ const allRegionsData = async region => {
 
 const singleCountryData = async country => {
   const data = await fetchData(
-    'https://restcountries.com/v3.1/name/' + country
+    'https://restcountries.com/v3.1/name/' + country + '?fullText=true'
   );
   createCountryCard(data);
 };
 
-export { singleCountryData, allRegionsData };
+const allCountries = async countries => {
+  const data = await fetchData('https://restcountries.com/v3.1/all');
+  createCountryCard(data);
+};
+
+export { singleCountryData, allRegionsData, allCountries };
